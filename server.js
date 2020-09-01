@@ -15,8 +15,8 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
-
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout" );
+// { useNewUrlParser: true }
 
 
 // app.get("/notes", (req, res) => {
@@ -57,6 +57,11 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { use
 //   // and populate them with any associated Notes.
 //   // TIP: Check the models out to see how the Notes refers to the User
 // });
+
+// Routes folders
+app.use(require("./routes/apiRoutes.js"));
+app.use(require("./routes/htmlRoutes.js"));
+
 
 // Start the server
 app.listen(PORT, () => {
