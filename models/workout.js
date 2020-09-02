@@ -39,11 +39,7 @@ const workoutSchema = new Schema(
       }
     ]
   },
-  {
-    toJSON: {
-      virtuals: true
-    }
-  }
+
 );
 
 // adds a dynamically-created property to schema
